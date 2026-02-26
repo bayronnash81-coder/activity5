@@ -1,0 +1,61 @@
+import java.util.Scanner;
+
+public class StudentGradeEvaluator {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        // ===== INPUT =====
+        System.out.println("STUDENT GRADE EVALUATOR");
+        System.out.println("------------------------");
+
+        System.out.print("Name: ");
+        String name = sc.nextLine();
+
+        System.out.print("ID: ");
+        String id = sc.nextLine();
+
+        System.out.print("Quiz: ");
+        double quiz = sc.nextDouble();
+
+        System.out.print("Assignment: ");
+        double assignment = sc.nextDouble();
+
+        System.out.print("Midterm: ");
+        double midterm = sc.nextDouble();
+
+        System.out.print("Final Exam: ");
+        double finalExam = sc.nextDouble();
+
+
+        // ===== COMPUTE FINAL GRADE =====
+        double finalGrade = (quiz * 0.20) +
+                            (assignment * 0.25) +
+                            (midterm * 0.25) +
+                            (finalExam * 0.30);
+
+        // ===== DETERMINE GRADE =====
+        String grade;
+
+        if (finalGrade >= 90)
+            grade = "A";
+        else if (finalGrade >= 80)
+            grade = "B";
+        else if (finalGrade >= 70)
+            grade = "C";
+        else if (finalGrade >= 60)
+            grade = "D";
+        else
+            grade = "F";
+
+
+        // ===== OUTPUT =====
+        System.out.println("\n----- RESULT -----");
+        System.out.println("Student : " + name);
+        System.out.println("ID      : " + id);
+        System.out.printf("Average : %.2f%n", finalGrade);
+        System.out.println("Grade   : " + grade);
+
+        sc.close();
+    }
+}
